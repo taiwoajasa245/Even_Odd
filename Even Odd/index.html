@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Even Odd Checker</title>
+</head>
+<style>
+    *{ 
+        margin: 0px; 
+        padding: 0px; 
+        box-sizing: border-box; 
+    }
+    .container{ 
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        flex-direction: column; 
+        background-color: rgb(35, 34, 43);
+        width: 100%;
+        height: 100vh; 
+
+    }
+    .container .header{ 
+        width: 100%;
+        height: 105px;
+        text-align: center; 
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+        font-weight: 400; 
+    }
+    .hero { 
+        padding: 74px; 
+        text-align: center; 
+        min-width: 500px; 
+        height: 50vh;
+        background: rgba(255, 255, 255, 0.075);  
+        border: 1px solid white; 
+        border-top-right-radius: 44px; 
+        border-bottom-left-radius: 44px; 
+        box-shadow: 0 2px 6px rgba(174, 174, 194, 0.808); 
+    }
+    input{ 
+        width: 20em; 
+        height: 30px; 
+        margin: 24px auto;  
+    }
+    input[type="number"]{ 
+        outline: none; 
+        background: transparent; 
+        color: #fff; 
+        text-align: center; 
+        border: none; 
+      
+
+    }
+    input[type="number"]:focus{ 
+        outline: none; 
+        border-bottom: 2px solid black; 
+        border-right: 2px solid black; 
+    }
+    input:placeholder{ 
+        margin: 500px; 
+    }
+
+    
+    button { 
+        width: 10em; 
+        height: 20px; 
+        background: #000; 
+        color: #fff; 
+        border: none; 
+    }
+    /* for mobile phone */
+    @media screen and (max-width: 700px){ 
+        .hero { 
+            padding: 54px;
+            min-width: 50px; 
+            height: 40vh;
+            background: black; 
+            color: white;  
+           
+            border-top-right-radius: 10px; 
+            border-bottom-left-radius: 20px; 
+            box-shadow: 0 2px 2px rgba(174, 174, 194, 0.808); 
+        }
+        input[type="number"]:focus{ 
+            outline: none; 
+            border-bottom: 2px solid white; 
+            border-right: 2px solid white; 
+        }
+        button { 
+            background: white; 
+            color: #000; 
+        }
+    }
+  
+</style>
+<body>
+    <div class="container">
+        <div class="hero">
+            <div class="header">
+                <h1> Even Odd Checker </h1>
+            </div>
+            <div class="wrapper">
+                <input type="number" name="input-number" class="input-field" placeholder="input a number">
+                <br>
+                <button id="result" type="submit">Check</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        let inputNumber = document.querySelector('.input-field'); 
+        let result = document.querySelector('#result'); 
+
+        const evenOdd = () => { 
+
+            evenOddNumber = Number( inputNumber.value);
+            // a condition to check if it is even or odd 
+            if (evenOddNumber % 2 == 0) { 
+                alert('This is an Even Number');
+            }else { 
+                alert('This is an Odd Number'); 
+            }
+        }
+        result.addEventListener('click', () => { 
+            evenOdd(); 
+           // console.log( typeof evenOddNumber);
+        })
+    </script>
+</body>
+</html>
